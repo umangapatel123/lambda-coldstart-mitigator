@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serverless Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="chatbot-container">
+        <div id="header">
+            <h1>Chat with WarmBot now!</h1>
+        </div>
+        <div id="chatbox">
+            <div id="convo">
+                <div class="chatbot-message">
+                    <p class="chatbot-text">Hey! Its WarmBot here, whaddya want to know?</p>
+                  </div>
+            </div>
+
+            <form id="user-input" autocomplete="off">
+                <div class="input-container">
+                    <input id="user-input-field" type="text" placeholder="Type your message here">
+                    <button id="submit-button" type="submit"><img class="send-img" src="send-message.svg" alt=""></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="warmbot.js"></script>
+</body>
+
+</html>

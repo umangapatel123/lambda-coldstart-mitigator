@@ -1,0 +1,12 @@
+{
+    "Content": {
+        "Location": "https://awslambda-ap-s-1-layers.s3.ap-south-1.amazonaws.com/snapshots/975050022826/nodejs-example-extension-3b239347-cb33-430d-bb7d-06dcd7b60c03?versionId=2M_zWUCO_tQWYb7YIT8Su4BsUrNkBsjm&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEBEaCmFwLXNvdXRoLTEiSDBGAiEAlfmtW9kkAU0eq9HySjrCL6uxh93mbeLku6KjDbESVzECIQCbHUYlQivavJPjnsGleI3Ge7yuOHRYdwbS5Avi01FOjSqzBQhaEAQaDDU0NTI1NTIwMTMwNyIMI%2FMzwjbHsnFQWclBKpAFDuJTKq6Q1NaUSoUxUi%2Fbk%2Fc8%2BoEC2uOSbA4dUv5dZnmwOwZICPKW%2FlL1c1ziKBiw0HGC4Ho56H5OvktKZKLEXkiZnADKglNMXRLAHZbXZ7u77dCS0VwVrUAzzuqzpZqUelM5Qdarke9Mj4KaR0gFljQjXoKpSeyjZazeQPiiLEOY%2BEr%2Fw8l5MUyWAzcV1QU4ZIzUb73HxX0ucL%2FFiHceXtcxb5WUtT%2FqVraePhi4lNhBHSdq6siXvo8Op4IJFbFtk4fiX%2Fhh7xErrg7P6dLkalq61xS7Jg9y0yQx6oGu7rkgSC2TjbbYSYkxEIvodMEAY5Tluy1%2FG8SrhNmD2ufvlvLcD8YN7r8Rlh5M%2BUxIZJOH5NRLiY0TYMcA8BRvpyChpjlv2bMBFUzg9589apura04vwrKkoS7c1pOpTNHGMvK77aFSGUWYW%2BpDgT36bGwECCHxXeXlMbltQ3VlYccPUWi5PVLCOuSQuWRPvGUEvaBK6PLgwUgxbthMyRGMB8DNscdNjW4u5O1cPWs9EW665bHS93hbfoJeHKUXmW23T%2FBAvjVS7MfIaTijZa%2Bea7TdpXaMTa%2BQ4s9zjAuq2iAMHA%2FjCRKrs377wSuleqtP8NyzRksqlL886DN%2FbZo6I3WLHqfRlqPuf9%2Ffa%2BK9gxCcPEzMH3Awee0vVfMpFLd4aScItysbx7Z33Zgxc1mpCknoMCnOnIWhv7sNKucDXpj3oMwATnkWCVUOWZBbWI006YRODXE%2B8STgaSJE36B4674eADipOcbNmew83WKlX1Rh%2FadvIyVuRRTjIvtCVtiE%2F6Pr3lvbaJ2tRKTl%2FJtn%2FupYtqyjRTwL9YljPkrXSTNymgU5B%2BRd7Q0eFOFDV%2BlHDnAw%2BsqYsQY6sAEz1%2B5I6Z%2FSg6ThZjEjfMtKK653aPGrukP94OtCLmjsdwwnexgDaslA9p2K%2F7E25PnpEscG4QzCQMnexpyg3Z4u2BNzDHjOr9vGFfJzKidPMmB0vxrjOtZnuubM9jSkiqIr6s05zL938qCGCzmGdHroDH1lfKo3pqYabwKz5Mm4xPLvSO685n6gMxt3Vh7Aluv1NhgQeHfabZAoQ5v%2Fzn%2B6yjAhKmKLX9jr3fVNibD9hg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240422T095404Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAX5456DIN4XOZ4LWG%2F20240422%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Signature=b1e1fab9c28de72cb67792b18bb60afac36116d0e4e034c493f6936587d281fc",
+        "CodeSha256": "pfbEk3OQowdSbUCLWFSXK69zNo2X0PwNvOYMm3X0Hyk=",
+        "CodeSize": 141626
+    },
+    "LayerArn": "arn:aws:lambda:ap-south-1:975050022826:layer:nodejs-example-extension",
+    "LayerVersionArn": "arn:aws:lambda:ap-south-1:975050022826:layer:nodejs-example-extension:1",
+    "Description": "",
+    "CreatedDate": "2024-04-22T09:54:05.295+0000",
+    "Version": 1
+}

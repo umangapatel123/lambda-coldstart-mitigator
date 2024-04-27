@@ -1,0 +1,5 @@
+{
+    "chatApplication-HandleQuery": "shutdown",
+    "chatApplication-GetQuery": "shutdown",
+    "chatApplication-StoreQuery": "shutdown"
+}
