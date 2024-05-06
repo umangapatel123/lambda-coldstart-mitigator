@@ -29,7 +29,7 @@ while True:
     response1 = get_latest_log_message('chatApplication-HandleQuery')
     response2 = get_latest_log_message('chatApplication-GetQuery')
     response3 = get_latest_log_message('chatApplication-StoreQuery')
-    with open('/tmp/status.json', 'w') as f:
+    with open('status.json', 'w') as f:
         json.dump({
             'chatApplication_HandleQuery': response1,
             'chatApplication_GetQuery': response2,

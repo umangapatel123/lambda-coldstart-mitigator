@@ -27,9 +27,9 @@ def get_latest_log_message(function_name):
 
 while True:
     start = time.time()
-    response1 = get_latest_log_message('chatApplication-HandleQuery')
-    response2 = get_latest_log_message('chatApplication-GetQuery')
-    response3 = get_latest_log_message('chatApplication-StoreQuery')
+    response1 = get_latest_log_message('chatApplication-EC2-HandleQuery')
+    response2 = get_latest_log_message('chatApplication-EC2-GetQuery')
+    response3 = get_latest_log_message('chatApplication-EC2-StoreQuery')
     with open('/tmp/status.json', 'w', encoding='utf-8') as f:
         json.dump({
             'chatApplication_HandleQuery': response1,

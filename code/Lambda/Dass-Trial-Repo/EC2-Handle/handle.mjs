@@ -14,11 +14,6 @@ export const handler = async (event) => {
                     response: faker.lorem.sentence()
                 });
                 break;
-            case "GET /api/handle/ping":
-                body = JSON.stringify({
-                    response: "pong"
-                });
-                break;
             default:
                 throw new Error(`Unsupported route: "${event.routeKey}"`);
         }
@@ -33,10 +28,6 @@ export const handler = async (event) => {
 
     return {
         statusCode,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true,
-          },      
         body,
         headers
     };

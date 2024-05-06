@@ -34,8 +34,15 @@ function_array = [
 print("Select the function to restart:")
 for i, function in enumerate(function_array):
     print(f"{i}: {function}")
+print("3" + ": " + "All")
 index = int(input("Enter the index of the function to restart: "))
 
-force_lambda_restart(
-    function_name=function_array[index],
-)
+if index == 3:
+    for function in function_array:
+        force_lambda_restart(
+            function_name=function,
+        )
+else:
+    force_lambda_restart(
+        function_name=function_array[index],
+    )

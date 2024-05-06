@@ -43,6 +43,10 @@ export const handler = async (event,context) => {
 
     return {
         statusCode,
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true,
+        },
         body,
         headers
     };

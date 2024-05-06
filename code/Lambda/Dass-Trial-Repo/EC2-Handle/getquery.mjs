@@ -2,8 +2,8 @@ import { DynamoDBClient } from '@aws-sdk/client-dynamodb';
 
 import {
     DynamoDBDocumentClient,
-    PutCommand,
-  } from "@aws-sdk/lib-dynamodb";
+    ScanCommand,
+} from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({});
 
@@ -11,7 +11,7 @@ const dynamo = DynamoDBDocumentClient.from(client);
 
 const tableName = "chatapplication-userquery";
 
-export const handler = async (event,context) => {
+export const getquery = async (event,context) => {
     let body;
     let statusCode = 200;
     const headers = {
@@ -20,20 +20,13 @@ export const handler = async (event,context) => {
 
     try {
         switch (event.routeKey) {
-            case "POST /api/query":
-                const { queryid, username, query, time } = JSON.parse(event.body);
-                await dynamo.send(new PutCommand({
-                    TableName: tableName,
-                    Item: {
-                        queryid,
-                        username,
-                        query,
-                        time
-                    }
+            case "GET /api/queries":
+                const { Items } = await dynamo.send(new ScanCommand({
+                    TableName: tableName
                 }));
-                body = `Put item ${username}`;
+                body = JSON.stringify(Items);
                 break;
-            case "GET /api/store/ping":
+            case "GET /api/getquery/ping":
                 body = JSON.stringify({
                     response: "pong"
                 });
@@ -50,10 +43,6 @@ export const handler = async (event,context) => {
 
     return {
         statusCode,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true,
-          },
         body,
         headers
     };

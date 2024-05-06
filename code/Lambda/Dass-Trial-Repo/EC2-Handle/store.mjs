@@ -11,7 +11,7 @@ const dynamo = DynamoDBDocumentClient.from(client);
 
 const tableName = "chatapplication-userquery";
 
-export const handler = async (event,context) => {
+export const store = async (event,context) => {
     let body;
     let statusCode = 200;
     const headers = {
@@ -50,10 +50,6 @@ export const handler = async (event,context) => {
 
     return {
         statusCode,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true,
-          },
         body,
         headers
     };
