@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Chat() {
     const [convo, setConvo] = useState([
-        { user: 'Bot', text: "Hey! It's ColdBot here, whaddya want to know?" }
+        { user: 'Bot', text: "Hey! It's WarmBot here, whaddya want to know?" }
     ]);
     const [userInput, setUserInput] = useState('');
     const convoRef = useRef(null);
@@ -12,9 +12,9 @@ export default function Chat() {
     useEffect(() => {
         const fetchData = async () => {
             console.time('Getting Queries');
-            const response = await axios.get('https://bed2bkcc2b.execute-api.ap-south-1.amazonaws.com/api/queries');
+            const response = await axios.get('http://3.108.250.195/api/queries');
             console.timeEnd('Getting Queries');
-            const array = JSON.parse(response.data);
+            const array = response.data;
             array.sort((a, b) => new Date(a.time) - new Date(b.time));
             const queries = array.map((item) => ({
                 user: item.username,
@@ -40,48 +40,61 @@ export default function Chat() {
 
         setUserInput('');
 
-        console.time('Saving User Query');
-        const response1 = await fetch('https://bed2bkcc2b.execute-api.ap-south-1.amazonaws.com/api/query', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                queryid: Math.floor(Math.random() * 1000000).toString(),
-                username: 'User',
-                query: input,
-                time: new Date().toISOString(),
-            }),
-        });
-        console.timeEnd('Saving User Query');
+        const saveUserQuery = async () => {
+            try {
+                console.time('Saving User Query');
+                const response1 = await fetch('http://3.108.250.195/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        queryid: Math.floor(Math.random() * 1000000).toString(),
+                        username: 'User',
+                        query: input,
+                        time: new Date().toISOString(),
+                    }),
+                });
+                console.timeEnd('Saving User Query');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        saveUserQuery();
 
-        // const response = await axios.get('https://bed2bkcc2b.execute-api.ap-south-1.amazonaws.com/api/random');
         console.time('Getting Bot Response');
-        const response = await axios.get('https://bed2bkcc2b.execute-api.ap-south-1.amazonaws.com/api/random');
+        const response = await axios.get('http://3.108.250.195/api/random');
         console.timeEnd('Getting Bot Response');
         console.log(response);
-        console.log(response.data);
-        const botResponse = JSON.parse(response.data).response;
+        const botResponse = response.data.response;
+        // const botResponse = JSON.parse(response.data).response;
         setConvo((prevConvo) => [
             ...prevConvo,
             { user: 'Bot', text: botResponse },
         ]);
 
-
-        console.time('Saving Bot Query');
-        const response2 = await fetch('https://bed2bkcc2b.execute-api.ap-south-1.amazonaws.com/api/query', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                queryid: Math.floor(Math.random() * 1000000).toString(),
-                username: 'Bot',
-                query: botResponse,
-                time: new Date().toISOString(),
-            }),
-        });
-        console.timeEnd('Saving Bot Query');
+        const saveBotQuery = async () => {
+            try {
+                console.time('Saving Bot Query');
+                const response2 = await fetch('http://3.108.250.195/api/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        queryid: Math.floor(Math.random() * 1000000).toString(),
+                        username: 'Bot',
+                        query: botResponse,
+                        time: new Date().toISOString(),
+                    }),
+                });
+                console.timeEnd('Saving Bot Query');
+            }
+            catch (error) {
+                console.error('Error:', error);
+            }
+        }
+        saveBotQuery();
     };
 
     useEffect(() => {
@@ -93,7 +106,7 @@ export default function Chat() {
     return (
         <div className="chatbot-container">
             <div id="header">
-                <h1>Chat with ColdBot now!</h1>
+                <h1>Chat with WarmBot now!</h1>
             </div>
             <div id="chatbox">
                 <div id="convo" ref={convoRef}>
